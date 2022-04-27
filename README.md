@@ -10,6 +10,8 @@ So before understanding how Merkle trees work, we need to understand how hash fu
 A hash function maps an input to a fixed output and this output is called hash. 
 The output is unique for every input and this enables fingerprinting of data. 
 So, huge amounts of data can be easily identified through their hash.
+
+
 ARCHITECTURE
  
  This is a binary merkel tree, the top hash is a hash of the entire tree. 
@@ -34,6 +36,8 @@ Step 3: If the tree->key is equal to the key we will return the tree.
 Step 4: If the key is smaller than tree->key then we will return find(tree->left, key)
 Step 5: else return find(tree->right, key)
 
+
+
 Algorithm to add a node in Merkle tree.
 Step 1: We will take key and value as parameters.
 Step 2: Take the hash(key) and store it in a variable called index.
@@ -43,6 +47,9 @@ Step 5: If the tree is null then assign the new node to the head and increment t
 Step 6: If the tree is not null then we will check if the key is already present in the tree using the find function.
 Step 7: If the key is already present in the tree then we will update the value.
 Step 8: If it is not present in the tree then we will use the insert function to insert the element.
+
+
+
 Algorithm of insert function.
 Step 1: It will take tree and item pointers of node data type as parameters.
 Step 2: If item->key is smaller than tree->key and tree->left is null then assign the item to tree->left.
